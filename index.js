@@ -8,7 +8,6 @@ form.addEventListener("submit", function (event) {
   fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${search.value}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       MovieDisplay(data.Search);
     });
 });
@@ -18,29 +17,34 @@ function MovieDisplay(array) {
   main_movies.innerHTML = "";
 
   for (let movies of array) {
-    main_movies.innerHTML += `
-      <div class="movie-card">
-        <img
-          class="movie-poster"
-          src="${movies.Poster}"
-          alt="${movies.Title}"
-        />
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${movies.imdbID}`)
+      .then((response) => response.json())
+      .then((details) => {
+        main_movies.innerHTML += `
+          <div class="movie-card">
+            <img
+              class="movie-poster"
+              src="${movies.Poster}"
+              alt="${movies.Title}"
+            />
 
-        <div class="movie-info">
-          <div class="movie-header">
-            <h3 class="movie-title">${movies.Title}</h3>
-            <span class="movie-rating">⭐ N/A</span>
+            <div class="movie-info">
+              <div class="movie-header">
+                <h3 class="movie-title">${movies.Title}</h3>
+                <span class="movie-rating">⭐ ${details.imdbRating}</span>
+                  <button class="watchlist-btn">+ Watchlist</button>
+              </div>
+
+              <p class="movie-meta">
+                ${details.Runtime} · ${details.Genre}
+              </p>
+
+              <p class="movie-plot">
+                ${details.Plot}
+              </p>
+            </div>
           </div>
-
-          <p class="movie-meta">${movies.Year}</p>
-
-          <p class="movie-plot">
-            Movie description not loaded yet.
-          </p>
-
-          <button class="watchlist-btn">+ Watchlist</button>
-        </div>
-      </div>
-    `;
+        `;
+      });
   }
 }
