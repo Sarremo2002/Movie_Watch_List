@@ -67,8 +67,10 @@ body {
 /* ---------- MAIN CONTENT ---------- */
 
 #content {
-  padding: 3rem 1.5rem;
+  padding: 2rem 1.5rem;
 }
+
+/* ---------- EMPTY STATE ---------- */
 
 #empty-state {
   display: flex;
@@ -81,4 +83,58 @@ body {
 #empty-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+}
+
+/* ---------- MOVIE CARD ---------- */
+
+.movie-card {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.movie-poster {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.movie-info {
+  flex: 1;
+}
+
+.movie-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.movie-rating {
+  font-size: 0.9rem;
+}
+
+.movie-meta {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.movie-plot {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.75rem;
+}
+
+.watchlist-btn {
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
 }
