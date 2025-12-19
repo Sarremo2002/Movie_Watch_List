@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find your film</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Find your film</h1>
+      <a class="nav-link" href="watchlist.html">My Watchlist</a>
+
+      <form class="search-bar">
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Search for a movie"
+        />
+        <button>Search</button>
+      </form>
+    </header>
+
+    <main class="content">
+      <div id="movies"></div>
+
+      <div class="empty-state" id="empty-state">
+        <div class="icon">🎞️</div>
+        <p>Start exploring</p>
+      </div>
+    </main>
+  </body>
+</html>
