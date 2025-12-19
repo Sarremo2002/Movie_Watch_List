@@ -139,3 +139,13 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
+
+[data-watchlist] {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+[data-watchlist][data-added] {
+  opacity: 0.6;
+  transform: scale(1.05);
+  cursor: default;
+}

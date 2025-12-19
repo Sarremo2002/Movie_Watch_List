@@ -50,3 +50,21 @@ function MovieDisplay(array) {
       });
   }
 }
+
+document.getElementById("movies").addEventListener("click", function (e) {
+  if (e.target.dataset.watchlist) {
+    const imdbID = e.target.dataset.watchlist;
+
+    let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+
+    if (!watchlist.includes(imdbID)) {
+      watchlist.push(imdbID);
+      localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    }
+
+    // 👇 UI FEEDBACK (this is new)
+    e.target.textContent = "✓ Added";
+    e.target.setAttribute("data-added", "true");
+    e.target.disabled = true;
+  }
+});
