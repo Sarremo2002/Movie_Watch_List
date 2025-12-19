@@ -11,7 +11,7 @@ body {
 
 /* ---------- HEADER ---------- */
 
-.hero {
+#hero {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4");
   background-size: cover;
@@ -21,11 +21,11 @@ body {
   position: relative;
 }
 
-.hero h1 {
+#hero h1 {
   font-size: 2.5rem;
 }
 
-.nav-link {
+#nav-link {
   position: absolute;
   top: 2.5rem;
   right: 2rem;
@@ -36,13 +36,13 @@ body {
 
 /* ---------- SEARCH BAR ---------- */
 
-.search-bar {
+#search-bar {
   display: flex;
   margin-top: 2rem;
   max-width: 600px;
 }
 
-.search-bar input {
+#search-input {
   flex: 1;
   padding: 0.75rem 1rem 0.75rem 44px;
   border: none;
@@ -55,7 +55,7 @@ body {
   background-position: 14px center;
 }
 
-.search-bar button {
+#search-button {
   padding: 0.75rem 1.25rem;
   border: none;
   background: #ffffff;
@@ -66,45 +66,19 @@ body {
 
 /* ---------- MAIN CONTENT ---------- */
 
-.content {
+#content {
   padding: 3rem 1.5rem;
 }
 
-.empty {
+#empty-state {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-}
-
-.empty-state {
-  text-align: center;
   color: #d1d1d1;
+  margin-top: 4rem;
 }
 
-.empty-state .icon {
+#empty-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-}
-
-/* ---------- WATCHLIST EMPTY CTA ---------- */
-
-.add {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  font-weight: 600;
-  color: #121212;
-}
-
-.add span:first-child {
-  background: #121212;
-  color: white;
-  border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
 }

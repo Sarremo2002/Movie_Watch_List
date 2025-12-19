@@ -7,27 +7,25 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <header class="hero">
+    <header id="hero">
       <h1>Find your film</h1>
-      <a class="nav-link" href="watchlist.html">My Watchlist</a>
+      <a id="nav-link" href="watchlist.html">My Watchlist</a>
 
-      <form class="search-bar">
-        <input
-          class="search-input"
-          type="text"
-          placeholder="Search for a movie"
-        />
-        <button>Search</button>
+      <form id="search-bar">
+        <input id="search-input" type="text" placeholder="Search for a movie" />
+        <button id="search-button">Search</button>
       </form>
     </header>
 
-    <main class="content">
+    <main id="content">
       <div id="movies"></div>
 
-      <div class="empty-state" id="empty-state">
-        <div class="icon">🎞️</div>
+      <div id="empty-state">
+        <div id="empty-icon">🎞️</div>
         <p>Start exploring</p>
       </div>
     </main>
+
+    <script src="index.js"></script>
   </body>
 </html>
