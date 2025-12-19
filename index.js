@@ -21,25 +21,27 @@ function MovieDisplay(array) {
       .then((response) => response.json())
       .then((details) => {
         main_movies.innerHTML += `
-          <div class="movie-card">
+          <div data-card="${movies.imdbID}">
             <img
-              class="movie-poster"
+              data-poster
               src="${movies.Poster}"
               alt="${movies.Title}"
             />
 
-            <div class="movie-info">
-              <div class="movie-header">
-                <h3 class="movie-title">${movies.Title}</h3>
-                <span class="movie-rating">⭐ ${details.imdbRating}</span>
-                  <button class="watchlist-btn">+ Watchlist</button>
+            <div data-info>
+              <div data-header>
+                <h3 data-title>${movies.Title}</h3>
+                <span data-rating>⭐ ${details.imdbRating}</span>
+                <button data-watchlist="${movies.imdbID}">
+                  + Watchlist
+                </button>
               </div>
 
-              <p class="movie-meta">
+              <p data-meta>
                 ${details.Runtime} · ${details.Genre}
               </p>
 
-              <p class="movie-plot">
+              <p data-plot>
                 ${details.Plot}
               </p>
             </div>
